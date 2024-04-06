@@ -23,6 +23,16 @@ let arrayLibros = [odisea, donQuijoteDeLaMancha, elCodigoDaVinci, aliciaEnElPais
 
 console.log(arrayLibros);
 
+let librosFiltrados
+
+function filtrarPorCategoria() {
+    for (let i = 0; i < arrayCategorias.length; i++) {
+        librosFiltrados = arrayLibros.filter ((el)=>el.categoria == arrayCategorias [i]);
+        console.log(librosFiltrados);
+    }
+}
+filtrarPorCategoria()
+
 function comprar() {
     let opciones = parseInt(prompt(`¡Buenas noticias! Esta semana tenemos un 15% de descuento en todos nuestros libros (El descuento se aplicará al calcular el total del carrito). Esperamos que disfrute su compra :)\nPulse 1 si desea comprar el libro: ${arrayLibros[0].titulo} Autor: ${arrayLibros[0].autor} Precio: $${arrayLibros[0].precio}\nPulse 2 si desea comprar el libro: ${arrayLibros[1].titulo} Autor: ${arrayLibros[1].autor} Precio: $${arrayLibros[1].precio}\nPulse 3 si desea comprar el libro: ${arrayLibros[2].titulo} Autor: ${arrayLibros[2].autor} Precio: $${arrayLibros[2].precio}\nPulse 4 si desea comprar el libro: ${arrayLibros[3].titulo} Autor: ${arrayLibros[3].autor} Precio: $${arrayLibros[3].precio}\nPulse 5 si desea comprar el libro: ${arrayLibros[4].titulo} Autor: ${arrayLibros[4].autor} Precio: $${arrayLibros[4].precio}\nPulse 6 si desea comprar el libro: ${arrayLibros[5].titulo} Autor: ${arrayLibros[5].autor} Precio: $${arrayLibros[5].precio}\nPulse 7 si desea comprar el libro: ${arrayLibros[6].titulo} Autor: ${arrayLibros[6].autor} Precio: $${arrayLibros[6].precio}\nPulse 8 si desea comprar el libro: ${arrayLibros[7].titulo} Autor: ${arrayLibros[7].autor} Precio: $${arrayLibros[7].precio}\nPulse 9 si desea comprar el libro: ${arrayLibros[8].titulo} Autor: ${arrayLibros[8].autor} Precio: $${arrayLibros[8].precio}\nPulse 10 si desea comprar el libro: ${arrayLibros[9].titulo} Autor: ${arrayLibros[9].autor} Precio: ${arrayLibros[9].precio}\nPulse 11 si desea ordenar la lista en orden alfabetico de la A a la Z`))
 
@@ -30,51 +40,51 @@ function comprar() {
         opciones = parseInt(prompt(`¡Buenas noticias! Esta semana tenemos un 15% de descuento en todos nuestros libros (El descuento se aplicará al calcular el total del carrito). Esperamos que disfrute su compra :)\nPulse 1 si desea comprar el libro: ${arrayLibros[0].titulo} Autor: ${arrayLibros[0].autor} Precio: $${arrayLibros[0].precio}\nPulse 2 si desea comprar el libro: ${arrayLibros[1].titulo} Autor: ${arrayLibros[1].autor} Precio: $${arrayLibros[1].precio}\nPulse 3 si desea comprar el libro: ${arrayLibros[2].titulo} Autor: ${arrayLibros[2].autor} Precio: $${arrayLibros[2].precio}\nPulse 4 si desea comprar el libro: ${arrayLibros[3].titulo} Autor: ${arrayLibros[3].autor} Precio: $${arrayLibros[3].precio}\nPulse 5 si desea comprar el libro: ${arrayLibros[4].titulo} Autor: ${arrayLibros[4].autor} Precio: $${arrayLibros[4].precio}\nPulse 6 si desea comprar el libro: ${arrayLibros[5].titulo} Autor: ${arrayLibros[5].autor} Precio: $${arrayLibros[5].precio}\nPulse 7 si desea comprar el libro: ${arrayLibros[6].titulo} Autor: ${arrayLibros[6].autor} Precio: $${arrayLibros[6].precio}\nPulse 8 si desea comprar el libro: ${arrayLibros[7].titulo} Autor: ${arrayLibros[7].autor} Precio: $${arrayLibros[7].precio}\nPulse 9 si desea comprar el libro: ${arrayLibros[8].titulo} Autor: ${arrayLibros[8].autor} Precio: $${arrayLibros[8].precio}\nPulse 10 si desea comprar el libro: ${arrayLibros[9].titulo} Autor: ${arrayLibros[9].autor} Precio: ${arrayLibros[9].precio}\nPulse 11 si desea ordenar la lista en orden alfabetico de la A a la Z`))
     }
     let productoElegido;
-    let productoConDescuento = arrayLibros.map((producto) => {
+    let productoPrecioFinal = arrayLibros.map((producto) => {
         return {
             titulo: producto.titulo,
             precio: producto.precio - (producto.precio * 0.25)
         }
     })
     if (opciones == 1) {
-        productoElegido = productoConDescuento[0]
-        totalCarrito += productoConDescuento[0].precio
+        productoElegido = productoPrecioFinal[0]
+        totalCarrito += productoPrecioFinal[0].precio
     }
     else if (opciones == 2) {
-        productoElegido = productoConDescuento[1]
-        totalCarrito += productoConDescuento[1].precio
+        productoElegido = productoPrecioFinal[1]
+        totalCarrito += productoPrecioFinal[1].precio
     }
     else if (opciones == 3) {
-        productoElegido = productoConDescuento[2]
-        totalCarrito += productoConDescuento[2].precio
+        productoElegido = productoPrecioFinal[2]
+        totalCarrito += productoPrecioFinal[2].precio
     }
     else if (opciones == 4) {
-        productoElegido = productoConDescuento[3]
-        totalCarrito += productoConDescuento[3].precio
+        productoElegido = productoPrecioFinal[3]
+        totalCarrito += productoPrecioFinal[3].precio
     }
     else if (opciones == 5) {
-        productoElegido = productoConDescuento[4]
-        totalCarrito += productoConDescuento[4].precio
+        productoElegido = productoPrecioFinal[4]
+        totalCarrito += productoPrecioFinal[4].precio
     }
     else if (opciones == 6) {
-        productoElegido = productoConDescuento[5]
-        totalCarrito += productoConDescuento[5].precio
+        productoElegido = productoPrecioFinal[5]
+        totalCarrito += productoPrecioFinal[5].precio
     }
     else if (opciones == 7) {
-        productoElegido = productoConDescuento[6]
-        totalCarrito += productoConDescuento[6].precio
+        productoElegido = productoPrecioFinal[6]
+        totalCarrito += productoPrecioFinal[6].precio
     }
     else if (opciones == 8) {
-        productoElegido = productoConDescuento[7]
-        totalCarrito += productoConDescuento[7].precio
+        productoElegido = productoPrecioFinal[7]
+        totalCarrito += productoPrecioFinal[7].precio
     }
     else if (opciones == 9) {
-        productoElegido = productoConDescuento[8]
-        totalCarrito += productoConDescuento[8].precio
+        productoElegido = productoPrecioFinal[8]
+        totalCarrito += productoPrecioFinal[8].precio
     }
     else if (opciones == 10) {
-        productoElegido = productoConDescuento[9]
-        totalCarrito += productoConDescuento[9].precio
+        productoElegido = productoPrecioFinal[9]
+        totalCarrito += productoPrecioFinal[9].precio
     }
     else if (opciones == 11) {
         arrayLibros.sort((a, b) => {
@@ -92,7 +102,7 @@ function comprar() {
             opciones = parseInt(prompt(`¡Buenas noticias! Esta semana tenemos un 15% de descuento en todos nuestros libros (El descuento se aplicara al calcular el total del carrito). Esperamos que disfrute su compra :)\nPulse 1 si desea comprar el libro: ${arrayLibros[0].titulo} Autor: ${arrayLibros[0].autor} Precio: $${arrayLibros[0].precio}\nPulse 2 si desea comprar el libro: ${arrayLibros[1].titulo} Autor: ${arrayLibros[1].autor} Precio: $${arrayLibros[1].precio}\nPulse 3 si desea comprar el libro: ${arrayLibros[2].titulo} Autor: ${arrayLibros[2].autor} Precio: $${arrayLibros[2].precio}\nPulse 4 si desea comprar el libro: ${arrayLibros[3].titulo} Autor: ${arrayLibros[3].autor} Precio: $${arrayLibros[3].precio}\nPulse 5 si desea comprar el libro: ${arrayLibros[4].titulo} Autor: ${arrayLibros[4].autor} Precio: $${arrayLibros[4].precio}\nPulse 6 si desea comprar el libro: ${arrayLibros[5].titulo} Autor: ${arrayLibros[5].autor} Precio: $${arrayLibros[5].precio}\nPulse 7 si desea comprar el libro: ${arrayLibros[6].titulo} Autor: ${arrayLibros[6].autor} Precio: $${arrayLibros[6].precio}\nPulse 8 si desea comprar el libro: ${arrayLibros[7].titulo} Autor: ${arrayLibros[7].autor} Precio: $${arrayLibros[7].precio}\nPulse 9 si desea comprar el libro: ${arrayLibros[8].titulo} Autor: ${arrayLibros[8].autor} Precio: $${arrayLibros[8].precio}\nPulse 10 si desea comprar el libro: ${arrayLibros[9].titulo} Autor: ${arrayLibros[9].autor} Precio: ${arrayLibros[9].precio}`))
         }
 
-        productoConDescuento = arrayLibros.map((producto) => {
+        productoPrecioFinal = arrayLibros.map((producto) => {
             return {
                 titulo: producto.titulo,
                 precio: producto.precio - (producto.precio * 0.25)
@@ -100,44 +110,44 @@ function comprar() {
         })
 
         if (opciones == 1) {
-            productoElegido = productoConDescuento[0]
-            totalCarrito += productoConDescuento[0].precio
+            productoElegido = productoPrecioFinal[0]
+            totalCarrito += productoPrecioFinal[0].precio
         }
         else if (opciones == 2) {
-            productoElegido = productoConDescuento[1]
-            totalCarrito += productoConDescuento[1].precio
+            productoElegido = productoPrecioFinal[1]
+            totalCarrito += productoPrecioFinal[1].precio
         }
         else if (opciones == 3) {
-            productoElegido = productoConDescuento[2]
-            totalCarrito += productoConDescuento[2].precio
+            productoElegido = productoPrecioFinal[2]
+            totalCarrito += productoPrecioFinal[2].precio
         }
         else if (opciones == 4) {
-            productoElegido = productoConDescuento[3]
-            totalCarrito += productoConDescuento[3].precio
+            productoElegido = productoPrecioFinal[3]
+            totalCarrito += productoPrecioFinal[3].precio
         }
         else if (opciones == 5) {
-            productoElegido = productoConDescuento[4]
-            totalCarrito += productoConDescuento[4].precio
+            productoElegido = productoPrecioFinal[4]
+            totalCarrito += productoPrecioFinal[4].precio
         }
         else if (opciones == 6) {
-            productoElegido = productoConDescuento[5]
-            totalCarrito += productoConDescuento[5].precio
+            productoElegido = productoPrecioFinal[5]
+            totalCarrito += productoPrecioFinal[5].precio
         }
         else if (opciones == 7) {
-            productoElegido = productoConDescuento[6]
-            totalCarrito += productoConDescuento[6].precio
+            productoElegido = productoPrecioFinal[6]
+            totalCarrito += productoPrecioFinal[6].precio
         }
         else if (opciones == 8) {
-            productoElegido = productoConDescuento[7]
-            totalCarrito += productoConDescuento[7].precio
+            productoElegido = productoPrecioFinal[7]
+            totalCarrito += productoPrecioFinal[7].precio
         }
         else if (opciones == 9) {
-            productoElegido = productoConDescuento[8]
-            totalCarrito += productoConDescuento[8].precio
+            productoElegido = productoPrecioFinal[8]
+            totalCarrito += productoPrecioFinal[8].precio
         }
         else if (opciones == 10) {
-            productoElegido = productoConDescuento[9]
-            totalCarrito += productoConDescuento[9].precio
+            productoElegido = productoPrecioFinal[9]
+            totalCarrito += productoPrecioFinal[9].precio
         }
     }
     let confirmacion = confirm(`Usted eligió ${productoElegido.titulo} y su precio final con el descuento aplicado es de $${productoElegido.precio} ¿Desea agregarlo al carrito?`)
