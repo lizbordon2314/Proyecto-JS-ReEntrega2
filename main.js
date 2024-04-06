@@ -27,10 +27,11 @@ let librosFiltrados
 
 function filtrarPorCategoria() {
     for (let i = 0; i < arrayCategorias.length; i++) {
-        librosFiltrados = arrayLibros.filter ((el)=>el.categoria == arrayCategorias [i]);
+        librosFiltrados = arrayLibros.filter((el) => el.categoria == arrayCategorias[i]);
         console.log(librosFiltrados);
     }
-}
+} 
+
 filtrarPorCategoria()
 
 function comprar() {
